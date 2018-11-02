@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="woundcare-bootstrap.min.css">
+        <script
+              src="https://code.jquery.com/jquery-3.3.1.min.js"
+              integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+              crossorigin="anonymous"></script>
+        <script type="text/javascript" src="background.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="card" style="margin-top: 1em">
+              <div id="wound-type" class="card-body">
+                <p class="card-text">Select Wound Type:</p>
+                <a href="#" id ="Superficial" class="btn btn-sm" style="background-color: #FF9800; color:#FFFFFF">Superficial</a>
+                <a href="#" id = "Deep" class="btn btn-sm" style="background-color: #FF5722; color:#FFFFFF">Deep</a>
+                <a href="#" id ="Tunneling" class="btn btn-sm" style="background-color: #B71C1C; color:#FFFFFF">Tunneling</a>
+              </div>
+            </div>
+        </div>
+
+         <div class="container">
+            <div class="card" style="margin-top: 1em">
+              <div id="wound-condition" class="card-body">
+                <p class="card-text">Select Wound Condition:</p>
+                <a href="#" id = "Infected" class="btn btn-sm" style="background-color: #D50000; color:#FFFFFF">Infected</a>
+                <a href="#" id = "Non-infected" class="btn btn-sm" style="background-color: #1B5E20; color:#FFFFFF">Non-infected</a>
+              </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="card" style="margin-top: 1em">
+              <div id="exudate-level" class="card-body">
+                <p class="card-text">Select Exudate Level:</p>
+                <a href="#" id = "Nil/Low" class="btn btn-sm" style="background-color: #FF9800; color:#FFFFFF">Nil/Low</a>
+                <a href="#" id = "Moderate/Copious" class="btn btn-sm" style="background-color: #B71C1C; color:#FFFFFF">Moderate/Copious</a>
+              </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="card" style="margin-top: 1em">
+              <div class="card-body">
+                <p class="card-text">Selected Wound:</p>
+                <div id="selected-query">
+                    <span id="selected-type"></span>
+                    <span id="selected-condition"></span>
+                    <span id="selected-exudate"></span>
+                    <a href="#" id = "get-recommendations" class="btn btn-sm" style="background-color: #FF9800; color:#FFFFFF">Get Recommendations</a>
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div>&nbsp;</div>
+            <div>
+                <div class="card-header">
+                    <strong>Recommended Primary Contact Dressing</strong> 
+                </div>
+                
+                <div id="deep-infected-nil-low-exudate" class="result" class="list-group list-group-flush">
+                    <p class="list-group-item">Antimicrobial Hydrogel</p>
+                    <p class="list-group-item">Antimicrobial Moistened Gauze</p>
+                </div>
+                
+                <div id="deep-infected-moderate-copious-exudate" class="result" class="list-group list-group-flush">
+                    
+                    <p class="list-group-item">Antimicrobial Calcium Alginate </p>
+                    <p class="list-group-item">Antimicrobial Hydrogel</p>
+                    <p class="list-group-item">Antimicrobial Moistened Gauze </p>
+                    <p class="list-group-item">Antimicrobial Sheet/Mesh</p>
+                    <p class="list-group-item">Gentian Violet/Methylene Blue</p>
+                    <p class="list-group-item">Antimicrobial Alginate with Silver</p>
+                    <p class="list-group-item">Antimicrobial Hydrofibre with Silver (same as Ca Alginate)</p>
+                    <p class="list-group-item">Hypertonic Packing</p>
+                </div>
+
+                <div>&nbsp;</div>
+
+                <div class="card-header">
+                    <strong>Caution:</strong> <em> If an antimicrobial product is used as a primary contact layer, <strong>do not </strong>use an antimicrobial product as a cover dressing </em>
+                </div>
+
+                <div>&nbsp;</div>
+
+
+                <div class="card-header">
+                    <strong>Recommended Cover Dressing</strong> 
+                </div>
+                <div id="cover-dressing-result" class="list-group list-group-flush" class="result">
+                    <p class="list-group-item">Antimicrobial Foam</p>
+                    <p class="list-group-item">Absorbent Pad</p>
+                    <p class="list-group-item">Foam</p>
+                </div>
+
+                <div>&nbsp;</div>
+            </div>
+        </div>
+
+       <div class="container">
+            <div class="card" style="margin-bottom: 1em">
+              <div class="card-body">
+                <p class="card-text">For more information, refer to:</p>
+                <a href="#" class="btn btn-primary">Appendices C and D</a>
+              </div>
+            </div>
+        </div>
+    
+
+        <script src="https://code.jquery.com/jquery-git2.min.js"></script>
+        <script type="text/javascript" src="background.js"></script>
+
+    </body>
+</html>
