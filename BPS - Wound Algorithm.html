@@ -13,7 +13,7 @@
 
     <body>
         <div id="wound-type" class="container">
-            <div class="card" style="margin-top: 1em">
+            <div class="card">
               <div class="card-body">
                 <p class="card-text">Select Wound Type:</p>
                 <a href="#" id ="Superficial" class="btn btn-sm" style="background-color: #FF9800; color:#FFFFFF">Superficial</a>
@@ -24,9 +24,10 @@
         </div>
 
          <div id="wound-condition" class="container" hidden="true">
-            <div class="card" style="margin-top: 1em">
+            <div class="card">
               <div class="card-body">
-                <p>Wound:<span id="selected-type"></span></p>
+                <p>Selected Wound:</p>
+                <p><strong id="selected-type"></strong></p>
                 <p class="card-text">Select Wound Condition:</p>
                 <a href="#" id = "Infected" class="btn btn-sm" style="background-color: #D50000; color:#FFFFFF">Infected</a>
                 <a href="#" id = "Non-infected" class="btn btn-sm" style="background-color: #1B5E20; color:#FFFFFF">Non-infected</a>
@@ -35,9 +36,10 @@
         </div>
 
         <div id="exudate-level" class="container" hidden="true">
-            <div class="card" style="margin-top: 1em">
+            <div class="card">
               <div class="card-body">
-                <p>Wound:<span id="selected-condition"></span></p>
+                <p>Selected Wound:</p>
+                <p><strong id="selected-condition"></strong></p>
                 <p class="card-text">Select Exudate Level:</p>
                 <a href="#" id = "Nil/Low" class="btn btn-sm" style="background-color: #FF9800; color:#FFFFFF">Nil/Low</a>
                 <a href="#" id = "Moderate/Copious" class="btn btn-sm" style="background-color: #B71C1C; color:#FFFFFF">Moderate/Copious</a>
@@ -46,10 +48,11 @@
         </div>
 
         <div id="confirmation" class="container" hidden="true">
-            <div class="card" style="margin-top: 1em">
+            <div class="card">
               <div class="card-body">
                 <p class="card-text">Selected Wound:</p>
-                <p id="selected-query"></p>
+                <p><strong id="selected-query"></strong></p>                
+                <a href="#" id = "change-wound-type" class="btn btn-sm" style="background-color: rgba(233, 143, 40, 0.884); color:#FFFFFF">Change Selected Wound</a>
                 <a href="#" id = "get-recommendations" class="btn btn-sm" style="background-color: rgb(0, 110, 255); color:#FFFFFF">Get Recommendations</a>
               </div>
             </div>
@@ -100,7 +103,7 @@
         </div>
 
        <div id="info" class="container" hidden="true">
-            <div class="card" style="margin-bottom: 1em">
+            <div class="card">
               <div class="card-body">
                 <p class="card-text">For more information, refer to:</p>
                 <a href="#" class="btn btn-primary">Appendices C and D</a>
