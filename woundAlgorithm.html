@@ -10,90 +10,87 @@
               integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
               crossorigin="anonymous"></script>
         <script>
-        
-        var type = "";
-var condition = "";
-var exudate = "";
-var query = "";  
+            var type = "";
+            var condition = "";
+            var exudate = "";
+            var query = "";  
 
-/*Enters wound-type to stage*/
-$("#wound-type").on("click", "a", function(){
-// fades out other buttons 
-    $("#wound-type a").addClass("fade-button");
-    $(this).removeClass("fade-button");
+            /*Enters wound-type to stage*/
+            $("#wound-type").on("click", "a", function(){
+            // fades out other buttons 
+                $("#wound-type a").addClass("fade-button");
+                $(this).removeClass("fade-button");
 
-// stores query  
-    type = $(this).text();
-    $("#selected-type").text(type); 
-    $("#wound-condition").attr("hidden", false);
-    $("#confirmation").attr("hidden", false);
-    if (type != "" && condition !="" && exudate != ""){
-        $("#get-recommendations").attr("hidden", false);
-    }
-    return false;
-});
+            // stores query  
+                type = $(this).text();
+                $("#selected-type").text(type); 
+                $("#wound-condition").attr("hidden", false);
+                $("#confirmation").attr("hidden", false);
+                if (type != "" && condition !="" && exudate != ""){
+                    $("#get-recommendations").attr("hidden", false);
+                }
+                return false;
+            });
 
-/*Enters wound-condition to stage*/
-$("#wound-condition").on("click", "a", function(){
-// fades out other buttons 
-    $("#wound-condition a").addClass("fade-button");
-    $(this).removeClass("fade-button");
-// stores query
-    if (condition == ""){
-        $( "<center><p>+</p></center>" ).insertBefore("#selected-condition");
-    }  
-    condition = $(this).text();
-    $("#selected-condition").text(condition);
-    $("#exudate-level").attr("hidden", false);
-    if (type != "" && condition !="" && exudate != ""){
-        $("#get-recommendations").attr("hidden", false);
-    }
-    return false;
-});
+            /*Enters wound-condition to stage*/
+            $("#wound-condition").on("click", "a", function(){
+            // fades out other buttons 
+                $("#wound-condition a").addClass("fade-button");
+                $(this).removeClass("fade-button");
+            // stores query
+                if (condition == ""){
+                    $( "<center><p>+</p></center>" ).insertBefore("#selected-condition");
+                }  
+                condition = $(this).text();
+                $("#selected-condition").text(condition);
+                $("#exudate-level").attr("hidden", false);
+                if (type != "" && condition !="" && exudate != ""){
+                    $("#get-recommendations").attr("hidden", false);
+                }
+                return false;
+            });
 
-/*Enters exudate level to stage*/
-$("#exudate-level").on("click", "a", function(){
-// fades out other buttons 
-    $("#exudate-level a").addClass("fade-button");
-    $(this).removeClass("fade-button");
-// stores query 
-    if (exudate == ""){
-        $( "<center><p>+</p></center>" ).insertBefore("#selected-exudate");
-    }  
-    exudate = $(this).text() + " exudate";
-    $("#selected-exudate").text(exudate);
-    $("#confirmation").attr("hidden", false);
-    if (type != "" && condition !="" && exudate != ""){
-        $("#get-recommendations").attr("hidden", false);
-    }
-    return false;
-});
+            /*Enters exudate level to stage*/
+            $("#exudate-level").on("click", "a", function(){
+            // fades out other buttons 
+                $("#exudate-level a").addClass("fade-button");
+                $(this).removeClass("fade-button");
+            // stores query 
+                if (exudate == ""){
+                    $( "<center><p>+</p></center>" ).insertBefore("#selected-exudate");
+                }  
+                exudate = $(this).text() + " exudate";
+                $("#selected-exudate").text(exudate);
+                $("#confirmation").attr("hidden", false);
+                if (type != "" && condition !="" && exudate != ""){
+                    $("#get-recommendations").attr("hidden", false);
+                }
+                return false;
+            });
 
-// Confirm query and cleans up query to match id 
-$("#get-recommendations").on("click", function(){
-// cleans up query to look up results 
-    query = type + "-" + condition + "-" + exudate;
-    var result = query.toLowerCase();
-    result = result.replace("exudate", "");
-    result = result.trim();
-    result = result.replace("/", "");
-// shows hidden results
-    $("#"+result).attr("hidden", false);
-    $("#info").attr("hidden", false);
-//hides selection divs 
-    $("#wound-type").attr("hidden", true);
-    $("#wound-condition").attr("hidden", true);
-    $("#exudate-level").attr("hidden", true);
-    $("#get-recommendations").attr("hidden", true);
-    $("#change-wound-type").attr("hidden", false);
-});
+            // Confirm query and cleans up query to match id 
+            $("#get-recommendations").on("click", function(){
+            // cleans up query to look up results 
+                query = type + "-" + condition + "-" + exudate;
+                var result = query.toLowerCase();
+                result = result.replace("exudate", "");
+                result = result.trim();
+                result = result.replace("/", "");
+            // shows hidden results
+                $("#"+result).attr("hidden", false);
+                $("#info").attr("hidden", false);
+            //hides selection divs 
+                $("#wound-type").attr("hidden", true);
+                $("#wound-condition").attr("hidden", true);
+                $("#exudate-level").attr("hidden", true);
+                $("#get-recommendations").attr("hidden", true);
+                $("#change-wound-type").attr("hidden", false);
+            });
 
-$("#change-wound-type").on("click", function(){
-    window.location.reload(false);  
-});
-            
+            $("#change-wound-type").on("click", function(){
+                window.location.reload(false);  
+            });             
         </script>
-        <!--<script type="text/javascript" src="background.js"></script> !-->
     </head>
 
     <body>
@@ -101,9 +98,9 @@ $("#change-wound-type").on("click", function(){
             <div class="card">
               <div class="card-body">
                 <p class="card-text">1. Select Wound Type:</p>
-                <a href="#" id ="Superficial" class="btn btn-sm" style="background-color: #FF9800; color:#FFFFFF">Superficial</a>
-                <a href="#" id = "Deep" class="btn btn-sm" style="background-color: #FF5722; color:#FFFFFF">Deep</a>
-                <a href="#" id ="Tunneling" class="btn btn-sm" style="background-color: #B71C1C; color:#FFFFFF">Tunneling</a>
+                <a href="#" id ="Superficial" class="btn btn-sm">Superficial</a>
+                <a href="#" id = "Deep" class="btn btn-sm">Deep</a>
+                <a href="#" id ="Tunneling" class="btn btn-sm">Tunneling</a>
               </div>
             </div>
         </div>
@@ -112,8 +109,8 @@ $("#change-wound-type").on("click", function(){
             <div class="card">
               <div class="card-body">
                 <p class="card-text">2. Select Wound Condition:</p>
-                <a href="#" id = "Infected" class="btn btn-sm" style="background-color: #D50000; color:#FFFFFF">Infected</a>
-                <a href="#" id = "Non-infected" class="btn btn-sm" style="background-color: #1B5E20; color:#FFFFFF">Non-infected</a>
+                <a href="#" id = "Infected" class="btn btn-sm">Infected</a>
+                <a href="#" id = "Non-infected" class="btn btn-sm">Non-infected</a>
               </div>
             </div>
         </div>
@@ -124,8 +121,8 @@ $("#change-wound-type").on("click", function(){
                 <!-- <p>Selected Wound:</p>
                 <p><strong id="selected-condition"></strong></p> -->
                 <p class="card-text">3. Select Exudate Level:</p>
-                <a href="#" id = "Nil/Low" class="btn btn-sm" style="background-color: #FF9800; color:#FFFFFF">Nil/Low</a>
-                <a href="#" id = "Moderate/Copious" class="btn btn-sm" style="background-color: #B71C1C; color:#FFFFFF">Moderate/Copious</a>
+                <a href="#" id = "Nil-Low" class="btn btn-sm" >Nil/Low</a>
+                <a href="#" id = "Moderate-Copious" class="btn btn-sm">Moderate/Copious</a>
               </div>
             </div>
         </div>
@@ -135,11 +132,11 @@ $("#change-wound-type").on("click", function(){
               <div class="card-body">
             <center>
                 <p class="card-text">Selected Wound:</p>
-                <p style="line-height: 2px"><strong id="selected-type"></strong></p>               
-                <p style="line-height: 2px"><strong id="selected-condition"></strong></p>                
-                <p style="line-height: 2px"><strong id="selected-exudate"></strong></p>                
-                <a href="#" id = "get-recommendations" class="btn btn-sm" hidden="true" style="background-color: rgb(0, 110, 255); color:#FFFFFF">Get Recommendations</a>
-                <a href="#" id = "change-wound-type" class="btn btn-sm" hidden="true" style="background-color: rgb(0, 110, 255); color:#FFFFFF">Change Selected Wound</a>
+                <p class="special-p"><strong id="selected-type"></strong></p>               
+                <p class="special-p"><strong id="selected-condition"></strong></p>                
+                <p class="special-p"><strong id="selected-exudate"></strong></p>                
+                <a href="#" id = "get-recommendations" class="btn btn-sm" hidden="true">Get Recommendations</a>
+                <a href="#" id = "change-wound-type" class="btn btn-sm" hidden="true">Change Selected Wound</a>
             </center>
             </div>
             </div>
